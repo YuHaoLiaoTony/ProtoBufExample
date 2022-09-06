@@ -5,7 +5,6 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace ProtoBufExample.Controllers
@@ -19,32 +18,32 @@ namespace ProtoBufExample.Controllers
         public ActionResult GetProto()
         {
             List<TestContact> dateMatchs = new List<TestContact>()
-        {
-            new TestContact
             {
-                ID = 1,
-                Name = "xiao ming",
-                Address = "Cheng Du",
-                Time = DateTime.Now,
-                Datas = new List<TestContact2>{ },
-            },
-            new TestContact
-            {
-                ID = 2,
-                Name = "xiao ming2",
-                Address = "Cheng Du2",
-                Time = DateTime.Now.AddHours(1),
-                Datas = new List<TestContact2>{ },
-            },
-            new TestContact
-            {
-                ID = 3,
-                Name = "xiao ming3",
-                Address = "Cheng Du3",
-                Time = DateTime.Now.AddHours(2),
-                Datas = new List<TestContact2>{ },
-            }
-        };
+                new TestContact
+                {
+                    ID = 1,
+                    Name = "xiao ming",
+                    Address = "Cheng Du",
+                    Time = DateTime.Now,
+                    Datas = new List<TestContact2>{ },
+                },
+                new TestContact
+                {
+                    ID = 2,
+                    Name = "xiao ming2",
+                    Address = "Cheng Du2",
+                    Time = DateTime.Now.AddHours(1),
+                    Datas = new List<TestContact2>{ },
+                },
+                new TestContact
+                {
+                    ID = 3,
+                    Name = "xiao ming3",
+                    Address = "Cheng Du3",
+                    Time = DateTime.Now.AddHours(2),
+                    Datas = new List<TestContact2>{ },
+                }
+            };
             TestResponse response = new TestResponse
             {
                 DateMatchs = dateMatchs,
