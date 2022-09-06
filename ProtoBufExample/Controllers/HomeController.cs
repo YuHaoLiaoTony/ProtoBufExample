@@ -65,10 +65,11 @@ namespace ProtoBufExample.Controllers
         [HttpGet]
         public ActionResult TestProto()
         {
-            var client = new RestClient("https://localhost:44381/Home/GetProto");
-            client.Timeout = -1;
-            var request = new RestRequest(Method.GET);
-            IRestResponse response = client.Execute(request);
+            var client = new RestClient("https://localhost:44381/");
+            
+            var request = new RestRequest("Home/GetProto", Method.Get);
+            request.Timeout = -1;
+            RestResponse response = client.Execute(request);
 
             byte[] byteArray = response.RawBytes;
 
